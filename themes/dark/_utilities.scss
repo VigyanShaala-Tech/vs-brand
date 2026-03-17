@@ -14,53 +14,53 @@ a.text-secondary:focus {
   color: var(--pgn-color-action-default-secondary-base) !important;
 }
 
-.btn-primary {
-  @include button-variant("primary");
-}
+// .btn-primary {
+//   @include button-variant("primary");
+// }
 
-.btn-outline-primary {
-  @include button-variant("outline-primary");
-}
+// .btn-outline-primary {
+//   @include button-variant("outline-primary");
+// }
 
-.btn-inverse-primary {
-  @include button-variant("inverse-primary");
-}
+// .btn-inverse-primary {
+//   @include button-variant("inverse-primary");
+// }
 
-.btn-inverse-outline-primary {
-  @include button-variant("inverse-outline-primary");
-}
+// .btn-inverse-outline-primary {
+//   @include button-variant("inverse-outline-primary");
+// }
 
-.btn-success {
-  @include button-variant("success");
-}
+// .btn-success {
+//   @include button-variant("success");
+// }
 
-.btn-outline-success {
-  @include button-variant("outline-success");
-}
+// .btn-outline-success {
+//   @include button-variant("outline-success");
+// }
 
-.btn-inverse-success {
-  @include button-variant("inverse-success");
-}
+// .btn-inverse-success {
+//   @include button-variant("inverse-success");
+// }
 
-.btn-inverse-outline-success {
-  @include button-variant("inverse-outline-success");
-}
+// .btn-inverse-outline-success {
+//   @include button-variant("inverse-outline-success");
+// }
 
-.btn-danger {
-  @include button-variant("danger");
-}
+// .btn-danger {
+//   @include button-variant("danger");
+// }
 
-.btn-outline-danger {
-  @include button-variant("outline-danger");
-}
+// .btn-outline-danger {
+//   @include button-variant("outline-danger");
+// }
 
-.btn-inverse-danger {
-  @include button-variant("inverse-danger");
-}
+// .btn-inverse-danger {
+//   @include button-variant("inverse-danger");
+// }
 
-.btn-inverse-outline-danger {
-  @include button-variant("inverse-outline-danger");
-}
+// .btn-inverse-outline-danger {
+//   @include button-variant("inverse-outline-danger");
+// }
 
 .btn-link {
   color: var(--pgn-color-link-base);
