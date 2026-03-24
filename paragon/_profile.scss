@@ -50,7 +50,6 @@
     .container-fluid {
         margin: 0 auto;
         max-width: 1600px;
-        padding: 0 15px;
         .row {
             display: block;
             @media (--pgn-size-breakpoint-min-width-md) {
@@ -374,4 +373,19 @@
     .bg-color-grey-FBFAF9 {
       background: var(--pgn-color-primary-light);
     }
+    button.p-0.text-left.btn.btn-link.lh-36px {
+        color: var(--pgn-color-primary-base);
+    }
+}
+main#main {
+    max-width: 1570px !important;
+    margin: auto;
+}
+.profile-page-bg-banner.bg-primary.d-md-block.align-items-center.h-100.w-100.px-120px.py-5\.5 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.col.d-inline-flex.h-100.w-100.align-items-start.justify-content-start.g-3rem.px-120px.py-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
