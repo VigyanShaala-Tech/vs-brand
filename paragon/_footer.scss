@@ -9,7 +9,7 @@
 footer.tutor-container {
     margin: 0 auto;
     padding: 0 15px;
-    max-width: 1600px;
+    max-width: 1400px;
     text-align: center;
     @media (--pgn-size-breakpoint-min-width-lg) {
         text-align: left;
@@ -112,7 +112,7 @@ footer.tutor-container {
         }
     }
     .container-mw-xl.container-fluid {
-        max-width: 1600px !important;
+        max-width: 1400px !important;
         padding: 35px 15px !important;
         .row {
             margin: 0 -15px;
