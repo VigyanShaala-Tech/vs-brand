@@ -964,10 +964,67 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
-.container-xl {
+.container,
+.container-fluid,
+.container-xl,
+.container-mw-xl,
+.page__account-settings,
+.page-gradebook,
+.dashboard-page > .container,
+.achievement-page > .container,
+footer.tutor-container,
+#root #courseTabsNavigation,
+#root .header-action-bar,
+#root .header-action-bar + .d-flex.flex-row.position-relative,
+#root .learner-variant-header,
+#root .custom-loaded-tab-page main > .mx-5.mt-3,
+#dashboard-container .container-mw-xl.container-fluid {
   max-width: 1400px !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+@media (max-width: 991px) {
+  .container,
+  .container-fluid,
+  .container-xl,
+  .container-mw-xl,
+  .page__account-settings,
+  .page-gradebook,
+  .dashboard-page > .container,
+  .achievement-page > .container,
+  footer.tutor-container,
+  #root #courseTabsNavigation,
+  #root .header-action-bar,
+  #root .header-action-bar + .d-flex.flex-row.position-relative,
+  #root .learner-variant-header,
+  #root .custom-loaded-tab-page main > .mx-5.mt-3,
+  #dashboard-container .container-mw-xl.container-fluid {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .container,
+  .container-fluid,
+  .container-xl,
+  .container-mw-xl,
+  .page__account-settings,
+  .page-gradebook,
+  .dashboard-page > .container,
+  .achievement-page > .container,
+  footer.tutor-container,
+  #root #courseTabsNavigation,
+  #root .header-action-bar,
+  #root .header-action-bar + .d-flex.flex-row.position-relative,
+  #root .learner-variant-header,
+  #root .custom-loaded-tab-page main > .mx-5.mt-3,
+  #dashboard-container .container-mw-xl.container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 #root .btn:before {
   border-color: transparent !important;
@@ -1483,7 +1540,7 @@ body {
 #root header.site-header-desktop .container-fluid {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 32px;
 }
 #root header.site-header-desktop .secondary-menu-container .nav-link:hover,
 #root header.site-header-desktop .secondary-menu-container .nav-link:focus,
@@ -1492,6 +1549,27 @@ body {
   background: transparent;
   color: var(--pgn-color-primary-base);
   text-decoration: underline;
+}
+#root header.site-header-desktop .secondary-menu-container .btn-link {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: none !important;
+}
+#root header.site-header-desktop .secondary-menu-container .btn-link:hover {
+  border: none !important;
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root header.site-header-desktop .secondary-menu-container .btn-outline-primary {
+  border: none !important;
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+#root header.site-header-desktop .secondary-menu-container .btn-outline-primary:hover {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: none !important;
 }
 #root header.site-header-desktop .logo {
   position: static;
@@ -1886,7 +1964,7 @@ body {
 #root .learner-variant-header {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 0 15px !important;
+  padding: 0 32px !important;
   position: relative;
   box-shadow: none !important;
 }
@@ -2040,6 +2118,12 @@ body {
   padding: 0.6rem 0 !important;
   top: unset !important;
 }
+#root .site-header-desktop .container-fluid .nav-container .secondary-menu-container .menu .menu-trigger {
+  color: var(--pgn-color-primary-base) !important;
+}
+#root .site-header-desktop .container-fluid .nav-container .secondary-menu-container .menu .menu-trigger:hover {
+  color: var(--pgn-color-primary-base) !important;
+}
 .wrapper-footer {
   padding: 25px 0;
   border-top: 1px solid #E5E7EB;
@@ -2056,7 +2140,7 @@ body {
 }
 footer.tutor-container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 32px;
   max-width: 1400px;
   text-align: center;
 }
@@ -2197,7 +2281,7 @@ footer.tutor-container .copyright-site {
 }
 #dashboard-container .container-mw-xl.container-fluid {
   max-width: 1400px !important;
-  padding: 35px 15px !important;
+  padding: 35px 32px !important;
 }
 #dashboard-container .container-mw-xl.container-fluid .row {
   margin: 0 -15px;
@@ -2983,7 +3067,7 @@ footer.footer {
 }
 .course-tabs-navigation .nav.nav-underline-tabs a, .course-tabs-navigation .nav.nav-underline-tabs button {
   border-width: 2px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0 10px 0 0;
   background: none !important;
@@ -3078,7 +3162,7 @@ div[data-learner-type=b2c_learner] div[role=heading].h2 {
   font-weight: 400 !important;
 }
 #root #courseTabsNavigation {
-  padding: 20px 15px !important;
+  padding: 20px 32px !important;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -3094,7 +3178,7 @@ div[data-learner-type=b2c_learner] div[role=heading].h2 {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 32px;
   box-shadow: none;
   position: static;
 }
@@ -3211,7 +3295,7 @@ div[data-learner-type=b2c_learner] div[role=heading].h2 {
 #root .header-action-bar + .d-flex.flex-row.position-relative {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px 30px;
+  padding: 0 32px 30px;
   width: 100%;
 }
 #root .header-action-bar + .d-flex.flex-row.position-relative .flex-column.position-sticky.d-flex {
@@ -3321,7 +3405,7 @@ div[data-learner-type=b2c_learner] div[role=heading].h2 {
   text-align: left !important;
 }
 #root .header-action-bar.shadow-none.border-light-300.border-bottom {
-  padding: 0 15px !important;
+  padding: 0 32px !important;
   margin: 0 0 10px;
 }
 #root .header-action-bar.shadow-none.border-light-300.border-bottom .navbar {
@@ -3353,7 +3437,7 @@ html[data-mce-style] {
 .page__account-settings {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 35px 15px 20px !important;
+  padding: 35px 32px 20px !important;
 }
 .page__account-settings .form-control {
   padding: 6px 10px;
@@ -4065,6 +4149,240 @@ main#main {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+#root main .page-gradebook {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 32px;
+}
+@media (max-width: 991px) {
+  #root main .page-gradebook {
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  #root main .page-gradebook {
+    padding: 0 1rem;
+  }
+}
+#root main .gradebook-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#root main .gradebook-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 35px 0 20px;
+}
+#root main .gradebook-header h1 {
+  color: var(--pgn-color-text-base);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+#root main .gradebook-header h2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--pgn-color-text-primary);
+}
+#root main .gradebook-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+#root main .bulk-management-history-view {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+#root main a,
+#root .gradebook-header a,
+#root .gradebook-content a:not(.btn):not([class*=btn-]),
+#root .bulk-management-history-view a:not(.btn):not([class*=btn-]) {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: none;
+}
+#root main a:hover, #root main a:focus,
+#root .gradebook-header a:hover,
+#root .gradebook-header a:focus,
+#root .gradebook-content a:not(.btn):not([class*=btn-]):hover,
+#root .gradebook-content a:not(.btn):not([class*=btn-]):focus,
+#root .bulk-management-history-view a:not(.btn):not([class*=btn-]):hover,
+#root .bulk-management-history-view a:not(.btn):not([class*=btn-]):focus {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: underline;
+}
+#root main .btn-primary, #root main [data-paragon-theme-variant=dark] .modal button, [data-paragon-theme-variant=dark] .modal #root main button,
+#root .profile-gate-overlay .btn-primary,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main .btn-primary svg, #root main [data-paragon-theme-variant=dark] .modal button svg, [data-paragon-theme-variant=dark] .modal #root main button svg,
+#root main .btn-primary path,
+#root main [data-paragon-theme-variant=dark] .modal button path,
+[data-paragon-theme-variant=dark] .modal #root main button path,
+#root main .btn-primary .pgn__icon,
+#root main [data-paragon-theme-variant=dark] .modal button .pgn__icon,
+[data-paragon-theme-variant=dark] .modal #root main button .pgn__icon,
+#root main .btn-primary .fa,
+#root main [data-paragon-theme-variant=dark] .modal button .fa,
+[data-paragon-theme-variant=dark] .modal #root main button .fa,
+#root .profile-gate-overlay .btn-primary svg,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button svg,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button svg,
+#root .profile-gate-overlay .btn-primary path,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button path,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button path,
+#root .profile-gate-overlay .btn-primary .pgn__icon,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button .pgn__icon,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button .pgn__icon,
+#root .profile-gate-overlay .btn-primary .fa,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button .fa,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button .fa {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+#root main .btn-primary:hover, #root main [data-paragon-theme-variant=dark] .modal button:hover, [data-paragon-theme-variant=dark] .modal #root main button:hover, #root main .btn-primary:focus, #root main [data-paragon-theme-variant=dark] .modal button:focus, [data-paragon-theme-variant=dark] .modal #root main button:focus, #root main .btn-primary:active, #root main [data-paragon-theme-variant=dark] .modal button:active, [data-paragon-theme-variant=dark] .modal #root main button:active, #root main .btn-primary:not(:disabled):not(.disabled):active,
+#root .profile-gate-overlay .btn-primary:hover,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button:hover,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:hover,
+#root .profile-gate-overlay .btn-primary:focus,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button:focus,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:focus,
+#root .profile-gate-overlay .btn-primary:active,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button:active,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:active,
+#root .profile-gate-overlay .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main .btn-primary:disabled, #root main [data-paragon-theme-variant=dark] .modal button:disabled, [data-paragon-theme-variant=dark] .modal #root main button:disabled, #root main .btn-primary.disabled, #root main [data-paragon-theme-variant=dark] .modal button.disabled, [data-paragon-theme-variant=dark] .modal #root main button.disabled,
+#root .profile-gate-overlay .btn-primary:disabled,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button:disabled,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:disabled,
+#root .profile-gate-overlay .btn-primary.disabled,
+#root .profile-gate-overlay [data-paragon-theme-variant=dark] .modal button.disabled,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button.disabled {
+  opacity: 0.65;
+}
+#root main .btn-outline-primary {
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+#root main .btn-outline-primary svg,
+#root main .btn-outline-primary path,
+#root main .btn-outline-primary .pgn__icon,
+#root main .btn-outline-primary .fa {
+  fill: var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+}
+#root main .btn-outline-primary:hover, #root main .btn-outline-primary:focus, #root main .btn-outline-primary:active, #root main .btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main .btn-outline-primary:hover svg,
+#root main .btn-outline-primary:hover path,
+#root main .btn-outline-primary:hover .pgn__icon,
+#root main .btn-outline-primary:hover .fa, #root main .btn-outline-primary:focus svg,
+#root main .btn-outline-primary:focus path,
+#root main .btn-outline-primary:focus .pgn__icon,
+#root main .btn-outline-primary:focus .fa, #root main .btn-outline-primary:active svg,
+#root main .btn-outline-primary:active path,
+#root main .btn-outline-primary:active .pgn__icon,
+#root main .btn-outline-primary:active .fa, #root main .btn-outline-primary:not(:disabled):not(.disabled):active svg,
+#root main .btn-outline-primary:not(:disabled):not(.disabled):active path,
+#root main .btn-outline-primary:not(:disabled):not(.disabled):active .pgn__icon,
+#root main .btn-outline-primary:not(:disabled):not(.disabled):active .fa {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+#root main .btn-outline-secondary {
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+#root main .btn-outline-secondary:hover, #root main .btn-outline-secondary:focus, #root main .btn-outline-secondary:active, #root main .btn-outline-secondary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main .btn-link,
+#root main .grade-button.btn-link {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+}
+#root main .btn-link:hover, #root main .btn-link:focus, #root main .btn-link:active,
+#root main .grade-button.btn-link:hover,
+#root main .grade-button.btn-link:focus,
+#root main .grade-button.btn-link:active {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: underline !important;
+  background: none !important;
+}
+#root main .btn-tertiary {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+#root main .btn-tertiary:hover, #root main .btn-tertiary:focus, #root main .btn-tertiary:active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main .btn-info {
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+  border: none !important;
+}
+#root main .btn-info:hover, #root main .btn-info:focus {
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+#root .pgn__modal .btn-primary, #root .pgn__modal [data-paragon-theme-variant=dark] .modal button, [data-paragon-theme-variant=dark] .modal #root .pgn__modal button {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root .pgn__modal .btn-tertiary {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+#root .pgn__modal .btn-tertiary:hover, #root .pgn__modal .btn-tertiary:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main button:focus:not(:focus-visible),
+#root main .btn:focus:not(:focus-visible),
+#root main a.btn:focus:not(:focus-visible),
+#root main [type=button]:focus:not(:focus-visible),
+#root main [type=submit]:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+#root main button:focus-visible,
+#root main .btn:focus-visible,
+#root main a.btn:focus-visible,
+#root main [type=button]:focus-visible,
+#root main [type=submit]:focus-visible {
+  outline: 2px solid var(--pgn-color-primary-base) !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
+}
 div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);
 }
@@ -4417,7 +4735,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #root header.site-header-desktop .container-fluid {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 32px;
 }
 [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link:hover,
 [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link:focus,
@@ -4426,6 +4744,27 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   background: transparent;
   color: var(--pgn-color-primary-base);
   text-decoration: underline;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .btn-link {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: none !important;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .btn-link:hover {
+  border: none !important;
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .btn-outline-primary {
+  border: none !important;
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .btn-outline-primary:hover {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: none !important;
 }
 [data-paragon-theme-variant=dark] #root header.site-header-desktop .logo {
   position: static;
@@ -4844,7 +5183,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #root .learner-variant-header {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 0 15px !important;
+  padding: 0 32px !important;
   position: relative;
   box-shadow: none !important;
 }
@@ -5008,6 +5347,12 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   padding: 0.6rem 0 !important;
   top: unset !important;
 }
+[data-paragon-theme-variant=dark] #root .site-header-desktop .container-fluid .nav-container .secondary-menu-container .menu .menu-trigger {
+  color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root .site-header-desktop .container-fluid .nav-container .secondary-menu-container .menu .menu-trigger:hover {
+  color: var(--pgn-color-primary-base) !important;
+}
 [data-paragon-theme-variant=dark] .wrapper-footer {
   padding: 25px 0;
   border-top: 1px solid #E5E7EB;
@@ -5024,7 +5369,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] footer.tutor-container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 32px;
   max-width: 1400px;
   text-align: center;
 }
@@ -5169,7 +5514,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid {
   max-width: 1400px !important;
-  padding: 35px 15px !important;
+  padding: 35px 32px !important;
 }
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row {
   margin: 0 -15px;
@@ -6003,7 +6348,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs a, [data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs button {
   border-width: 2px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0 10px 0 0;
   background: none !important;
@@ -6099,7 +6444,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   font-weight: 400 !important;
 }
 [data-paragon-theme-variant=dark] #root #courseTabsNavigation {
-  padding: 20px 15px !important;
+  padding: 20px 32px !important;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -6116,7 +6461,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 32px;
   box-shadow: none;
   position: static;
   background: none;
@@ -6234,7 +6579,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #root .header-action-bar + .d-flex.flex-row.position-relative {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px 30px;
+  padding: 0 32px 30px;
   width: 100%;
 }
 [data-paragon-theme-variant=dark] #root .header-action-bar + .d-flex.flex-row.position-relative .flex-column.position-sticky.d-flex {
@@ -6345,7 +6690,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   text-align: left !important;
 }
 [data-paragon-theme-variant=dark] #root .header-action-bar.shadow-none.border-light-300.border-bottom {
-  padding: 0 15px !important;
+  padding: 0 32px !important;
   margin: 0 0 10px;
   border-color: var(--pgn-color-primary-light) !important;
 }
@@ -6379,7 +6724,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] .page__account-settings {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 35px 15px 20px !important;
+  padding: 35px 32px 20px !important;
 }
 [data-paragon-theme-variant=dark] .page__account-settings .form-control {
   padding: 6px 10px;
@@ -7110,6 +7455,240 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] .col.d-inline-flex.h-100.w-100.align-items-start.justify-content-start.g-3rem.px-120px.py-6 {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+[data-paragon-theme-variant=dark] #root main .page-gradebook {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 32px;
+}
+@media (max-width: 991px) {
+  [data-paragon-theme-variant=dark] #root main .page-gradebook {
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  [data-paragon-theme-variant=dark] #root main .page-gradebook {
+    padding: 0 1rem;
+  }
+}
+[data-paragon-theme-variant=dark] #root main .gradebook-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+[data-paragon-theme-variant=dark] #root main .gradebook-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 35px 0 20px;
+}
+[data-paragon-theme-variant=dark] #root main .gradebook-header h1 {
+  color: var(--pgn-color-text-base);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+[data-paragon-theme-variant=dark] #root main .gradebook-header h2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--pgn-color-text-primary);
+}
+[data-paragon-theme-variant=dark] #root main .gradebook-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+[data-paragon-theme-variant=dark] #root main .bulk-management-history-view {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+[data-paragon-theme-variant=dark] #root main a,
+[data-paragon-theme-variant=dark] #root .gradebook-header a,
+[data-paragon-theme-variant=dark] #root .gradebook-content a:not(.btn):not([class*=btn-]),
+[data-paragon-theme-variant=dark] #root .bulk-management-history-view a:not(.btn):not([class*=btn-]) {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: none;
+}
+[data-paragon-theme-variant=dark] #root main a:hover, [data-paragon-theme-variant=dark] #root main a:focus,
+[data-paragon-theme-variant=dark] #root .gradebook-header a:hover,
+[data-paragon-theme-variant=dark] #root .gradebook-header a:focus,
+[data-paragon-theme-variant=dark] #root .gradebook-content a:not(.btn):not([class*=btn-]):hover,
+[data-paragon-theme-variant=dark] #root .gradebook-content a:not(.btn):not([class*=btn-]):focus,
+[data-paragon-theme-variant=dark] #root .bulk-management-history-view a:not(.btn):not([class*=btn-]):hover,
+[data-paragon-theme-variant=dark] #root .bulk-management-history-view a:not(.btn):not([class*=btn-]):focus {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: underline;
+}
+[data-paragon-theme-variant=dark] #root main .btn-primary, [data-paragon-theme-variant=dark] #root main .modal button, [data-paragon-theme-variant=dark] .modal #root main button,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-primary svg, [data-paragon-theme-variant=dark] #root main .modal button svg, [data-paragon-theme-variant=dark] .modal #root main button svg,
+[data-paragon-theme-variant=dark] #root main .btn-primary path,
+[data-paragon-theme-variant=dark] #root main .modal button path,
+[data-paragon-theme-variant=dark] .modal #root main button path,
+[data-paragon-theme-variant=dark] #root main .btn-primary .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .modal button .pgn__icon,
+[data-paragon-theme-variant=dark] .modal #root main button .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-primary .fa,
+[data-paragon-theme-variant=dark] #root main .modal button .fa,
+[data-paragon-theme-variant=dark] .modal #root main button .fa,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary svg,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button svg,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button svg,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary path,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button path,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button path,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary .pgn__icon,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button .pgn__icon,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button .pgn__icon,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary .fa,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button .fa,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button .fa {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-primary:hover, [data-paragon-theme-variant=dark] #root main .modal button:hover, [data-paragon-theme-variant=dark] .modal #root main button:hover, [data-paragon-theme-variant=dark] #root main .btn-primary:focus, [data-paragon-theme-variant=dark] #root main .modal button:focus, [data-paragon-theme-variant=dark] .modal #root main button:focus, [data-paragon-theme-variant=dark] #root main .btn-primary:active, [data-paragon-theme-variant=dark] #root main .modal button:active, [data-paragon-theme-variant=dark] .modal #root main button:active, [data-paragon-theme-variant=dark] #root main .btn-primary:not(:disabled):not(.disabled):active,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary:hover,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button:hover,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:hover,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary:focus,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button:focus,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:focus,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary:active,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button:active,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:active,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-primary:disabled, [data-paragon-theme-variant=dark] #root main .modal button:disabled, [data-paragon-theme-variant=dark] .modal #root main button:disabled, [data-paragon-theme-variant=dark] #root main .btn-primary.disabled, [data-paragon-theme-variant=dark] #root main .modal button.disabled, [data-paragon-theme-variant=dark] .modal #root main button.disabled,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary:disabled,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button:disabled,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button:disabled,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .btn-primary.disabled,
+[data-paragon-theme-variant=dark] #root .profile-gate-overlay .modal button.disabled,
+[data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay button.disabled {
+  opacity: 0.65;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary {
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary svg,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary path,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary .fa {
+  fill: var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:hover, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:focus, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:active, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:hover svg,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:hover path,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:hover .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:hover .fa, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:focus svg,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:focus path,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:focus .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:focus .fa, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:active svg,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:active path,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:active .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:active .fa, [data-paragon-theme-variant=dark] #root main .btn-outline-primary:not(:disabled):not(.disabled):active svg,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:not(:disabled):not(.disabled):active path,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:not(:disabled):not(.disabled):active .pgn__icon,
+[data-paragon-theme-variant=dark] #root main .btn-outline-primary:not(:disabled):not(.disabled):active .fa {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-secondary {
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-outline-secondary:hover, [data-paragon-theme-variant=dark] #root main .btn-outline-secondary:focus, [data-paragon-theme-variant=dark] #root main .btn-outline-secondary:active, [data-paragon-theme-variant=dark] #root main .btn-outline-secondary:not(:disabled):not(.disabled):active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-link,
+[data-paragon-theme-variant=dark] #root main .grade-button.btn-link {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-link:hover, [data-paragon-theme-variant=dark] #root main .btn-link:focus, [data-paragon-theme-variant=dark] #root main .btn-link:active,
+[data-paragon-theme-variant=dark] #root main .grade-button.btn-link:hover,
+[data-paragon-theme-variant=dark] #root main .grade-button.btn-link:focus,
+[data-paragon-theme-variant=dark] #root main .grade-button.btn-link:active {
+  color: var(--pgn-color-primary-base) !important;
+  text-decoration: underline !important;
+  background: none !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-tertiary {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-tertiary:hover, [data-paragon-theme-variant=dark] #root main .btn-tertiary:focus, [data-paragon-theme-variant=dark] #root main .btn-tertiary:active {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-info {
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+  border: none !important;
+}
+[data-paragon-theme-variant=dark] #root main .btn-info:hover, [data-paragon-theme-variant=dark] #root main .btn-info:focus {
+  color: var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+[data-paragon-theme-variant=dark] #root .pgn__modal .btn-primary, [data-paragon-theme-variant=dark] #root .pgn__modal .modal button, [data-paragon-theme-variant=dark] .modal #root .pgn__modal button {
+  background-color: var(--pgn-color-primary-base) !important;
+  border-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root .pgn__modal .btn-tertiary {
+  color: var(--pgn-color-primary-base) !important;
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  background: transparent !important;
+}
+[data-paragon-theme-variant=dark] #root .pgn__modal .btn-tertiary:hover, [data-paragon-theme-variant=dark] #root .pgn__modal .btn-tertiary:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main button:focus:not(:focus-visible),
+[data-paragon-theme-variant=dark] #root main .btn:focus:not(:focus-visible),
+[data-paragon-theme-variant=dark] #root main a.btn:focus:not(:focus-visible),
+[data-paragon-theme-variant=dark] #root main [type=button]:focus:not(:focus-visible),
+[data-paragon-theme-variant=dark] #root main [type=submit]:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+[data-paragon-theme-variant=dark] #root main button:focus-visible,
+[data-paragon-theme-variant=dark] #root main .btn:focus-visible,
+[data-paragon-theme-variant=dark] #root main a.btn:focus-visible,
+[data-paragon-theme-variant=dark] #root main [type=button]:focus-visible,
+[data-paragon-theme-variant=dark] #root main [type=submit]:focus-visible {
+  outline: 2px solid var(--pgn-color-primary-base) !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
 }
 [data-paragon-theme-variant=dark] div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);

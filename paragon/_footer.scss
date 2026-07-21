@@ -8,7 +8,7 @@
 }
 footer.tutor-container {
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 32px;
     max-width: 1400px;
     text-align: center;
     @media (--pgn-size-breakpoint-min-width-lg) {
@@ -113,7 +113,7 @@ footer.tutor-container {
     }
     .container-mw-xl.container-fluid {
         max-width: 1400px !important;
-        padding: 35px 15px !important;
+        padding: 35px 32px !important;
         .row {
             margin: 0 -15px;
             .course-list-column {
