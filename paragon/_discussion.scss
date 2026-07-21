@@ -1,7 +1,7 @@
 // Discussion style
 
 #root #courseTabsNavigation {
-    padding: 20px 15px !important;
+    padding: 20px 32px !important;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -19,7 +19,7 @@
 max-width: 1400px;
 margin: 0 auto;
 width: 100%;
-padding: 0 15px;
+padding: 0 32px;
 box-shadow: none;
 position: static;
 .navbar {
@@ -113,7 +113,7 @@ margin: 0 0 30px;
 #root .header-action-bar + .d-flex.flex-row.position-relative {
 max-width: 1400px;
 margin: 0 auto;
-padding: 0 15px 30px;
+padding: 0 32px 30px;
 width: 100%;
 .flex-column.position-sticky.d-flex {
     position: relative !important;
@@ -192,7 +192,7 @@ width: 100%;
 }
 #root {
     .header-action-bar.shadow-none.border-light-300.border-bottom {
-        padding: 0 15px !important;
+        padding: 0 32px !important;
         margin: 0 0 10px;
         .navbar {
             padding-left: 0 !important;

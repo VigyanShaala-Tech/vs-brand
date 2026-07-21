@@ -10,10 +10,76 @@ html {
     width: 100%;
     overflow-x: hidden;
 }
-.container-xl {
-    max-width: 1400px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+// Shared responsive container layout for all MFEs (matches learner-dashboard)
+$vs-container-max-width: 1400px;
+
+@mixin vs-container-layout {
+    max-width: $vs-container-max-width !important;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+}
+
+.container,
+.container-fluid,
+.container-xl,
+.container-mw-xl,
+.page__account-settings,
+.page-gradebook,
+.dashboard-page > .container,
+.achievement-page > .container,
+footer.tutor-container,
+#root #courseTabsNavigation,
+#root .header-action-bar,
+#root .header-action-bar + .d-flex.flex-row.position-relative,
+#root .learner-variant-header,
+#root .custom-loaded-tab-page main > .mx-5.mt-3,
+#dashboard-container .container-mw-xl.container-fluid {
+    @include vs-container-layout;
+}
+
+@media (max-width: 991px) {
+    .container,
+    .container-fluid,
+    .container-xl,
+    .container-mw-xl,
+    .page__account-settings,
+    .page-gradebook,
+    .dashboard-page > .container,
+    .achievement-page > .container,
+    footer.tutor-container,
+    #root #courseTabsNavigation,
+    #root .header-action-bar,
+    #root .header-action-bar + .d-flex.flex-row.position-relative,
+    #root .learner-variant-header,
+    #root .custom-loaded-tab-page main > .mx-5.mt-3,
+    #dashboard-container .container-mw-xl.container-fluid {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container,
+    .container-fluid,
+    .container-xl,
+    .container-mw-xl,
+    .page__account-settings,
+    .page-gradebook,
+    .dashboard-page > .container,
+    .achievement-page > .container,
+    footer.tutor-container,
+    #root #courseTabsNavigation,
+    #root .header-action-bar,
+    #root .header-action-bar + .d-flex.flex-row.position-relative,
+    #root .learner-variant-header,
+    #root .custom-loaded-tab-page main > .mx-5.mt-3,
+    #dashboard-container .container-mw-xl.container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
 }
 #root .btn:before {
     border-color: transparent !important;
@@ -425,6 +491,7 @@ body {
 @import "./discussion";
 @import "./account";
 @import "./profile";
+@import "./gradebook";
 @import "./dates";
 @import "./extras";
 
