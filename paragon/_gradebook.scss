@@ -1,37 +1,18 @@
-// Gradebook MFE layout and button/link styles
-
 #root {
-    main {
-        .page-gradebook {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 32px;
+    main .page-gradebook > .sidebar-contents > .gradebook-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
-            @media (max-width: 991px) {
-                padding: 0 1.5rem;
-            }
-
-            @media (max-width: 576px) {
-                padding: 0 1rem;
-            }
-        }
-
-        .gradebook-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-        }
-
-        .gradebook-header {
+        > .gradebook-header {
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
             padding: 35px 0 20px;
 
-            h1 {
+            > h1 {
                 color: var(--pgn-color-text-base);
                 font-size: 24px;
                 line-height: 30px;
@@ -39,7 +20,7 @@
                 margin: 0 0 10px;
             }
 
-            h2 {
+            > .subtitle-row > h2 {
                 font-size: 18px;
                 line-height: 24px;
                 font-weight: 500;
@@ -47,135 +28,24 @@
             }
         }
 
-        .gradebook-container {
+        > .gradebook-container {
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
         }
 
-        .bulk-management-history-view {
+        > .bulk-management-history-view {
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
         }
     }
 
-    // Links
-    main a,
-    .gradebook-header a,
-    .gradebook-content a:not(.btn):not([class*='btn-']),
-    .bulk-management-history-view a:not(.btn):not([class*='btn-']) {
-        color: var(--pgn-color-primary-base) !important;
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-            color: var(--pgn-color-primary-base) !important;
-            text-decoration: underline;
-        }
-    }
-
-    // Primary buttons
-    main .btn-primary,
-    .profile-gate-overlay .btn-primary {
+    .profile-gate-overlay > .profile-gate-card a > .btn-primary {
         background-color: var(--pgn-color-primary-base) !important;
         border-color: var(--pgn-color-primary-base) !important;
         color: #ffffff !important;
 
-        svg,
-        path,
-        .pgn__icon,
-        .fa {
-            fill: #ffffff !important;
-            color: #ffffff !important;
-        }
-
-        &:hover,
-        &:focus,
-        &:active,
-        &:not(:disabled):not(.disabled):active {
-            background-color: var(--pgn-color-primary-base) !important;
-            border-color: var(--pgn-color-primary-base) !important;
-            color: #ffffff !important;
-        }
-
-        &:disabled,
-        &.disabled {
-            opacity: 0.65;
-        }
-    }
-
-    // Outline primary buttons (pagination, export, import)
-    main .btn-outline-primary {
-        border: 1px solid var(--pgn-color-primary-base) !important;
-        color: var(--pgn-color-primary-base) !important;
-        background: transparent !important;
-
-        svg,
-        path,
-        .pgn__icon,
-        .fa {
-            fill: var(--pgn-color-primary-base) !important;
-            color: var(--pgn-color-primary-base) !important;
-        }
-
-        &:hover,
-        &:focus,
-        &:active,
-        &:not(:disabled):not(.disabled):active {
-            background-color: var(--pgn-color-primary-base) !important;
-            border-color: var(--pgn-color-primary-base) !important;
-            color: #ffffff !important;
-
-            svg,
-            path,
-            .pgn__icon,
-            .fa {
-                fill: #ffffff !important;
-                color: #ffffff !important;
-            }
-        }
-    }
-
-    // Outline secondary (filter apply buttons)
-    main .btn-outline-secondary {
-        border: 1px solid var(--pgn-color-primary-base) !important;
-        color: var(--pgn-color-primary-base) !important;
-        background: transparent !important;
-
-        &:hover,
-        &:focus,
-        &:active,
-        &:not(:disabled):not(.disabled):active {
-            background-color: var(--pgn-color-primary-base) !important;
-            border-color: var(--pgn-color-primary-base) !important;
-            color: #ffffff !important;
-        }
-    }
-
-    // Link buttons (grade column headers, text actions)
-    main .btn-link,
-    main .grade-button.btn-link {
-        color: var(--pgn-color-primary-base) !important;
-        text-decoration: none !important;
-        background: none !important;
-        border: none !important;
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: var(--pgn-color-primary-base) !important;
-            text-decoration: underline !important;
-            background: none !important;
-        }
-    }
-
-    // Tertiary buttons (toggle view, modal close)
-    main .btn-tertiary {
-        color: var(--pgn-color-primary-base) !important;
-        border: 1px solid var(--pgn-color-primary-base) !important;
-        background: transparent !important;
-
         &:hover,
         &:focus,
         &:active {
@@ -183,48 +53,7 @@
             border-color: var(--pgn-color-primary-base) !important;
             color: #ffffff !important;
         }
-    }
 
-    // Filter badge close buttons
-    main .btn-info {
-        color: var(--pgn-color-primary-base) !important;
-        background: transparent !important;
-        border: none !important;
-
-        &:hover,
-        &:focus {
-            color: var(--pgn-color-primary-base) !important;
-            background: transparent !important;
-        }
-    }
-
-    // Modal actions
-    .pgn__modal {
-        .btn-primary {
-            background-color: var(--pgn-color-primary-base) !important;
-            border-color: var(--pgn-color-primary-base) !important;
-            color: #ffffff !important;
-        }
-
-        .btn-tertiary {
-            color: var(--pgn-color-primary-base) !important;
-            border: 1px solid var(--pgn-color-primary-base) !important;
-            background: transparent !important;
-
-            &:hover,
-            &:focus {
-                background-color: var(--pgn-color-primary-base) !important;
-                color: #ffffff !important;
-            }
-        }
-    }
-
-    // Focus outline for accessibility
-    main button,
-    main .btn,
-    main a.btn,
-    main [type='button'],
-    main [type='submit'] {
         &:focus:not(:focus-visible) {
             outline: none !important;
             box-shadow: none !important;
@@ -234,6 +63,346 @@
             outline: 2px solid var(--pgn-color-primary-base) !important;
             outline-offset: 2px;
             box-shadow: none !important;
+        }
+    }
+
+    .page-gradebook {
+        > aside.sidebar .filter-group .grade-filter-action > .btn-outline-secondary {
+            border: 1px solid var(--pgn-color-primary-base) !important;
+            color: var(--pgn-color-primary-base) !important;
+            background: transparent !important;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: var(--pgn-color-primary-base) !important;
+                border-color: var(--pgn-color-primary-base) !important;
+                color: #ffffff !important;
+            }
+
+            &:focus:not(:focus-visible) {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--pgn-color-primary-base) !important;
+                outline-offset: 2px;
+                box-shadow: none !important;
+            }
+        }
+
+        > .sidebar-contents > .gradebook-content {
+            > .gradebook-header > a.mb-3 {
+                color: var(--pgn-color-primary-base) !important;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: var(--pgn-color-primary-base) !important;
+                    text-decoration: underline;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .gradebook-header > .subtitle-row > .btn-tertiary {
+                color: var(--pgn-color-primary-base) !important;
+                border: 1px solid var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .d-flex.justify-content-between.flex-wrap > #edit-filters-btn.btn-primary {
+                background-color: var(--pgn-color-primary-base) !important;
+                border-color: var(--pgn-color-primary-base) !important;
+                color: #ffffff !important;
+
+                svg,
+                path,
+                .pgn__icon,
+                .fa {
+                    fill: #ffffff !important;
+                    color: #ffffff !important;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+                }
+
+                &:disabled,
+                &.disabled {
+                    opacity: 0.65;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > div > div > .badge.badge-info > .btn-info {
+                color: var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+                border: none !important;
+
+                &:hover,
+                &:focus {
+                    color: var(--pgn-color-primary-base) !important;
+                    background: transparent !important;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > div > .d-flex.justify-content-between.align-items-center > .btn-outline-primary {
+                border: 1px solid var(--pgn-color-primary-base) !important;
+                color: var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+
+                svg,
+                path,
+                .pgn__icon,
+                .fa {
+                    fill: var(--pgn-color-primary-base) !important;
+                    color: var(--pgn-color-primary-base) !important;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+
+                    svg,
+                    path,
+                    .pgn__icon,
+                    .fa {
+                        fill: #ffffff !important;
+                        color: #ffffff !important;
+                    }
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .d-flex.justify-content-between.align-items-center.mb-2 > .d-flex > .btn-outline-primary {
+                border: 1px solid var(--pgn-color-primary-base) !important;
+                color: var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+
+                svg,
+                path,
+                .pgn__icon,
+                .fa {
+                    fill: var(--pgn-color-primary-base) !important;
+                    color: var(--pgn-color-primary-base) !important;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+
+                    svg,
+                    path,
+                    .pgn__icon,
+                    .fa {
+                        fill: #ffffff !important;
+                        color: #ffffff !important;
+                    }
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .d-flex.justify-content-between.align-items-center.mb-2 > .d-flex > .import-grades-btn.btn-outline-primary {
+                border: 1px solid var(--pgn-color-primary-base) !important;
+                color: var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+
+                svg,
+                path,
+                .pgn__icon,
+                .fa {
+                    fill: var(--pgn-color-primary-base) !important;
+                    color: var(--pgn-color-primary-base) !important;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+
+                    svg,
+                    path,
+                    .pgn__icon,
+                    .fa {
+                        fill: #ffffff !important;
+                        color: #ffffff !important;
+                    }
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .gradebook-container .pgn__data-table .grade-button.btn-link {
+                color: var(--pgn-color-primary-base) !important;
+                text-decoration: none !important;
+                background: none !important;
+                border: none !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: var(--pgn-color-primary-base) !important;
+                    text-decoration: underline !important;
+                    background: none !important;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .d-flex.justify-content-center > .btn-outline-primary {
+                border: 1px solid var(--pgn-color-primary-base) !important;
+                color: var(--pgn-color-primary-base) !important;
+                background: transparent !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    border-color: var(--pgn-color-primary-base) !important;
+                    color: #ffffff !important;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
+
+            > .bulk-management-history-view a {
+                color: var(--pgn-color-primary-base) !important;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: var(--pgn-color-primary-base) !important;
+                    text-decoration: underline;
+                }
+
+                svg,
+                path,
+                .pgn__icon {
+                    fill: var(--pgn-color-primary-base) !important;
+                    color: var(--pgn-color-primary-base) !important;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--pgn-color-primary-base) !important;
+                    outline-offset: 2px;
+                    box-shadow: none !important;
+                }
+            }
         }
     }
 }
