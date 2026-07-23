@@ -3925,20 +3925,37 @@ main#main > .header-action-bar.bg-white.position-sticky > .d-flex.flex-row.justi
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
 }
 @supports (appearance: base-select) {
-  .page__account-settings .pgn-transition-replace-group select.form-control, .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  .page__account-settings .pgn-transition-replace-group select.form-control,
   .page__account-settings .pgn-transition-replace-group select.form-control.has-value,
-  .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
-  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control,
-  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control {
     appearance: base-select;
+    display: inline-flex !important;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 12px 8px !important;
+    padding-right: 2rem !important;
   }
   .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
   .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
   .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
     background-color: #ffffff;
     border: 1px solid var(--pgn-color-primary-base);
     border-radius: 0.25rem;
     padding: 0.25rem 0;
+  }
+  .page__account-settings .pgn-transition-replace-group select.form-control::picker-icon,
+  .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker-icon,
+  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker-icon {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
   }
 }
 .page__account-settings .pgn-transition-replace-group select.form-control option,
@@ -4588,8 +4605,11 @@ main#main {
   box-shadow: none !important;
 }
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info {
+  display: inline-flex !important;
+  align-items: center;
   background-color: var(--pgn-color-primary-base) !important;
   color: #ffffff !important;
+  margin: 0 0 0.5rem !important;
 }
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info {
   color: #ffffff !important;
@@ -4609,6 +4629,15 @@ main#main {
   outline: 2px solid #ffffff !important;
   outline-offset: 2px;
   box-shadow: none !important;
+}
+#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info) {
+  margin-bottom: 0.5rem;
+}
+#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info) > br {
+  display: none;
+}
+#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info):last-child {
+  margin-bottom: 0;
 }
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > .d-flex.justify-content-between.align-items-center > .btn-outline-primary {
   border: 1px solid var(--pgn-color-primary-base) !important;
@@ -4789,6 +4818,48 @@ main#main {
   outline-offset: 2px;
   box-shadow: none !important;
 }
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 400;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter {
+  display: inline-block;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--pgn-color-text-base, #212529);
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter svg,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter svg,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter svg {
+  display: none !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter::before,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter::before,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter::before {
+  font-family: FontAwesome, "FontAwesome", sans-serif;
+  content: "\f0b0";
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: inherit;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > .btn-icon,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > button.btn-icon {
+  flex-shrink: 0;
+}
 #root main > .d-flex.sidebar-container.page-gradebook select.form-control,
 #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
 #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
@@ -4801,20 +4872,39 @@ main#main {
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
 }
 @supports (appearance: base-select) {
-  #root main > .d-flex.sidebar-container.page-gradebook select.form-control, #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control,
   #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
-  #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
-  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control,
-  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
     appearance: base-select;
+    display: inline-flex !important;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 12px 8px !important;
+    padding-right: 2rem !important;
   }
   #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
   #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
   #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
     background-color: #ffffff;
     border: 1px solid var(--pgn-color-primary-base);
     border-radius: 0.25rem;
     padding: 0.25rem 0;
+  }
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker-icon,
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker-icon,
+  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker-icon {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 #root main > .d-flex.sidebar-container.page-gradebook select.form-control option,
@@ -4833,6 +4923,64 @@ main#main {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
   color: #ffffff !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield {
+  --pgn-color-search-field-border-base: var(--pgn-color-primary-base);
+  --pgn-color-search-field-border-interaction: var(--pgn-color-primary-base);
+  --pgn-color-search-field-border-focus: var(--pgn-color-primary-base);
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield-form,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .form-control {
+  border-radius: 8px !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper:hover, #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper:active {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:hover, #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:active, #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:focus-within, #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus:not(.pgn__searchfield--external)::after,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .btn:focus-visible::after {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus:not(.pgn__searchfield--external) .pgn__searchfield_wrapper {
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item:hover,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item:focus,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item.active,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container [role=listbox] [role=option]:hover,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container [role=listbox] [role=option][aria-selected=true] {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead > tr,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead > tr,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead > tr,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead > tr {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead > tr > th,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead > tr > th,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead > tr > th,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead > tr > th {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
 }
 div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);
@@ -7673,20 +7821,37 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
 }
 @supports (appearance: base-select) {
-  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control,
   [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value,
-  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
-  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control,
-  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control {
     appearance: base-select;
+    display: inline-flex !important;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 12px 8px !important;
+    padding-right: 2rem !important;
   }
   [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
   [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
   [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
     background-color: #ffffff;
     border: 1px solid var(--pgn-color-primary-base);
     border-radius: 0.25rem;
     padding: 0.25rem 0;
+  }
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control::picker-icon,
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker-icon,
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker-icon {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
   }
 }
 [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control option,
@@ -8348,8 +8513,11 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   box-shadow: none !important;
 }
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info {
+  display: inline-flex !important;
+  align-items: center;
   background-color: var(--pgn-color-primary-base) !important;
   color: #ffffff !important;
+  margin: 0 0 0.5rem !important;
 }
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info {
   color: #ffffff !important;
@@ -8369,6 +8537,15 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline: 2px solid #ffffff !important;
   outline-offset: 2px;
   box-shadow: none !important;
+}
+[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info) {
+  margin-bottom: 0.5rem;
+}
+[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info) > br {
+  display: none;
+}
+[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div:has(> .badge.badge-info):last-child {
+  margin-bottom: 0;
 }
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > .d-flex.justify-content-between.align-items-center > .btn-outline-primary {
   border: 1px solid var(--pgn-color-primary-base) !important;
@@ -8549,6 +8726,48 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline-offset: 2px;
   box-shadow: none !important;
 }
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 400;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter {
+  display: inline-block;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--pgn-color-text-base, #212529);
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter svg,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter svg,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter svg {
+  display: none !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .fa.fa-filter::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 > .pgn__icon.fa.fa-filter::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 .fa-filter::before {
+  font-family: FontAwesome, "FontAwesome", sans-serif;
+  content: "\f0b0";
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: inherit;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > .btn-icon,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > button.btn-icon {
+  flex-shrink: 0;
+}
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control,
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
@@ -8561,20 +8780,39 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
 }
 @supports (appearance: base-select) {
-  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control,
   [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
-  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
-  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control,
-  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
     appearance: base-select;
+    display: inline-flex !important;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 12px 8px !important;
+    padding-right: 2rem !important;
   }
   [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
   [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
   [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
     background-color: #ffffff;
     border: 1px solid var(--pgn-color-primary-base);
     border-radius: 0.25rem;
     padding: 0.25rem 0;
+  }
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker-icon,
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker-icon,
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker-icon {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control option,
@@ -8593,6 +8831,64 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   background-color: var(--pgn-color-primary-base) !important;
   background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
   color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield {
+  --pgn-color-search-field-border-base: var(--pgn-color-primary-base);
+  --pgn-color-search-field-border-interaction: var(--pgn-color-primary-base);
+  --pgn-color-search-field-border-focus: var(--pgn-color-primary-base);
+  border: 1px solid var(--pgn-color-primary-base) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield-form,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .form-control {
+  border-radius: 8px !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper:hover, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .pgn__searchfield_wrapper:active {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:hover, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:active, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield:focus-within, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus:not(.pgn__searchfield--external)::after,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield .btn:focus-visible::after {
+  border-color: var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield.has-focus:not(.pgn__searchfield--external) .pgn__searchfield_wrapper {
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item:hover,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item:focus,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container .dropdown-menu .dropdown-item.active,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container [role=listbox] [role=option]:hover,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content .search-container [role=listbox] [role=option][aria-selected=true] {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead > tr,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead > tr,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead > tr,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead > tr {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-wrapper > thead > tr > th,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container .pgn__data-table-container > thead > tr > th,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table.pgn__data-table > thead > tr > th,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container table > thead > tr > th {
+  border-top: 1px solid var(--pgn-color-primary-base) !important;
+  border-bottom: 1px solid var(--pgn-color-primary-base) !important;
 }
 [data-paragon-theme-variant=dark] div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);
