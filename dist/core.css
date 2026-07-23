@@ -969,7 +969,6 @@ html {
 .container-xl,
 .container-mw-xl,
 .page__account-settings,
-.page-gradebook,
 .dashboard-page > .container,
 .achievement-page > .container,
 footer.tutor-container,
@@ -992,7 +991,6 @@ footer.tutor-container,
   .container-xl,
   .container-mw-xl,
   .page__account-settings,
-  .page-gradebook,
   .dashboard-page > .container,
   .achievement-page > .container,
   footer.tutor-container,
@@ -1012,7 +1010,6 @@ footer.tutor-container,
   .container-xl,
   .container-mw-xl,
   .page__account-settings,
-  .page-gradebook,
   .dashboard-page > .container,
   .achievement-page > .container,
   footer.tutor-container,
@@ -4334,41 +4331,97 @@ main#main {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+#root main > .d-flex.sidebar-container.page-gradebook {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  overflow-x: hidden !important;
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header {
-  max-width: 1400px;
-  margin: 0 auto;
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 5;
+  box-sizing: border-box;
+  max-width: 350px;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  overflow-x: auto;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+  box-sizing: border-box;
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+@media (max-width: 991px) {
+  #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header {
   width: 100%;
   padding: 35px 0 20px;
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header > h1 {
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header > h1 {
   color: var(--pgn-color-text-base);
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   margin: 0 0 10px;
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header > .subtitle-row > h2 {
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header > .subtitle-row > h2 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
   color: var(--pgn-color-text-primary);
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container {
-  max-width: 1400px;
-  margin: 0 auto;
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > h3.step-message-1,
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .d-flex.justify-content-between.flex-wrap {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .d-flex.justify-content-between.align-items-center.mb-2 {
+  gap: 1rem;
+  margin-bottom: 1rem !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+#root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .bulk-management-history-view {
   width: 100%;
 }
-#root main .page-gradebook > .sidebar-contents > .gradebook-content > .bulk-management-history-view {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar.open + .sidebar-contents.position-relative,
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar.open + .sidebar-contents.position-relative.opening {
+  width: calc(100% - 350px) !important;
+  max-width: calc(100% - 350px) !important;
+  margin-left: 350px !important;
 }
 #root .profile-gate-overlay > .profile-gate-card a > .btn-primary, #root .profile-gate-overlay > .profile-gate-card [data-paragon-theme-variant=dark] .modal a > button, [data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay > .profile-gate-card a > button {
   background-color: var(--pgn-color-primary-base) !important;
@@ -4479,13 +4532,18 @@ main#main {
   outline-offset: 2px;
   box-shadow: none !important;
 }
+#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info {
-  color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
 }
-#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:hover, #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus {
-  color: var(--pgn-color-primary-base) !important;
+#root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:hover, #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus, #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:active {
+  color: #ffffff !important;
   background: transparent !important;
 }
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus:not(:focus-visible) {
@@ -4493,7 +4551,7 @@ main#main {
   box-shadow: none !important;
 }
 #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus-visible {
-  outline: 2px solid var(--pgn-color-primary-base) !important;
+  outline: 2px solid #ffffff !important;
   outline-offset: 2px;
   box-shadow: none !important;
 }
@@ -4675,6 +4733,51 @@ main#main {
   outline: 2px solid var(--pgn-color-primary-base) !important;
   outline-offset: 2px;
   box-shadow: none !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
+  accent-color: var(--pgn-color-primary-base);
+}
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control:focus,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value:focus,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control:focus {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+@supports (appearance: base-select) {
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control, #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
+  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control,
+  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
+  }
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
+  #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    background-color: #ffffff;
+    border: 1px solid var(--pgn-color-primary-base);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0;
+  }
+}
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control option,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option {
+  background-color: #ffffff;
+  color: var(--pgn-color-text-base, #212529);
+}
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control option:checked, #root main > .d-flex.sidebar-container.page-gradebook select.form-control option:hover, #root main > .d-flex.sidebar-container.page-gradebook select.form-control option:focus,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:checked,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:hover,
+#root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:focus,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:checked,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:hover,
+#root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
+  color: #ffffff !important;
 }
 div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);
@@ -7933,41 +8036,97 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  overflow-x: hidden !important;
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header {
-  max-width: 1400px;
-  margin: 0 auto;
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 5;
+  box-sizing: border-box;
+  max-width: 350px;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  overflow-x: auto;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+  box-sizing: border-box;
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+@media (max-width: 991px) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header {
   width: 100%;
   padding: 35px 0 20px;
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header > h1 {
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header > h1 {
   color: var(--pgn-color-text-base);
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   margin: 0 0 10px;
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-header > .subtitle-row > h2 {
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-header > .subtitle-row > h2 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
   color: var(--pgn-color-text-primary);
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content > .gradebook-container {
-  max-width: 1400px;
-  margin: 0 auto;
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > h3.step-message-1,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .d-flex.justify-content-between.flex-wrap {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .d-flex.justify-content-between.align-items-center.mb-2 {
+  gap: 1rem;
+  margin-bottom: 1rem !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .gradebook-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative > .px-3.gradebook-content > .bulk-management-history-view {
   width: 100%;
 }
-[data-paragon-theme-variant=dark] #root main .page-gradebook > .sidebar-contents > .gradebook-content > .bulk-management-history-view {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar.open + .sidebar-contents.position-relative,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar.open + .sidebar-contents.position-relative.opening {
+  width: calc(100% - 350px) !important;
+  max-width: calc(100% - 350px) !important;
+  margin-left: 350px !important;
 }
 [data-paragon-theme-variant=dark] #root .profile-gate-overlay > .profile-gate-card a > .btn-primary, [data-paragon-theme-variant=dark] #root .profile-gate-overlay > .profile-gate-card .modal a > button, [data-paragon-theme-variant=dark] .modal #root .profile-gate-overlay > .profile-gate-card a > button {
   background-color: var(--pgn-color-primary-base) !important;
@@ -8078,13 +8237,18 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline-offset: 2px;
   box-shadow: none !important;
 }
+[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info {
+  background-color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
+}
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info {
-  color: var(--pgn-color-primary-base) !important;
+  color: #ffffff !important;
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
 }
-[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:hover, [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus {
-  color: var(--pgn-color-primary-base) !important;
+[data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:hover, [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus, [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:active {
+  color: #ffffff !important;
   background: transparent !important;
 }
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus:not(:focus-visible) {
@@ -8092,7 +8256,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   box-shadow: none !important;
 }
 [data-paragon-theme-variant=dark] #root .page-gradebook > .sidebar-contents > .gradebook-content > div > div > .badge.badge-info > .btn-info:focus-visible {
-  outline: 2px solid var(--pgn-color-primary-base) !important;
+  outline: 2px solid #ffffff !important;
   outline-offset: 2px;
   box-shadow: none !important;
 }
@@ -8274,6 +8438,51 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline: 2px solid var(--pgn-color-primary-base) !important;
   outline-offset: 2px;
   box-shadow: none !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control {
+  accent-color: var(--pgn-color-primary-base);
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control:focus,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value:focus,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control:focus {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+@supports (appearance: base-select) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value,
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control,
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
+  }
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value::picker(select),
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    background-color: #ffffff;
+    border: 1px solid var(--pgn-color-primary-base);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0;
+  }
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control option,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option {
+  background-color: #ffffff;
+  color: var(--pgn-color-text-base, #212529);
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control option:checked, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control option:hover, [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control option:focus,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:checked,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:hover,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook select.form-control.has-value option:focus,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:checked,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:hover,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .pgn__form-control-decorator-group > select.form-control option:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
+  color: #ffffff !important;
 }
 [data-paragon-theme-variant=dark] div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
   min-height: calc(100vh - 403px);

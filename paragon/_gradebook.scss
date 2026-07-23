@@ -1,43 +1,105 @@
 #root {
-    main .page-gradebook > .sidebar-contents > .gradebook-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        width: 100%;
+    main > .d-flex.sidebar-container.page-gradebook {
+        box-sizing: border-box;
+        position: relative;
+        max-width: 1400px !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        overflow-x: hidden !important;
 
-        > .gradebook-header {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 35px 0 20px;
+        // Filter opens at left of the 1400px box (not viewport edge)
+        > aside.sidebar {
+            left: 0 !important;
+            top: 0 !important;
+            z-index: 5;
+            box-sizing: border-box;
+            max-width: 350px;
+        }
 
-            > h1 {
-                color: var(--pgn-color-text-base);
-                font-size: 24px;
-                line-height: 30px;
-                font-weight: 700;
-                margin: 0 0 10px;
-            }
+        > .sidebar-contents.position-relative {
+            box-sizing: border-box;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            margin-left: 0 !important;
+            overflow-x: auto;
 
-            > .subtitle-row > h2 {
-                font-size: 18px;
-                line-height: 24px;
-                font-weight: 500;
-                color: var(--pgn-color-text-primary);
+            > .px-3.gradebook-content {
+                box-sizing: border-box;
+                max-width: none !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 32px !important;
+                padding-right: 32px !important;
+
+                @media (max-width: 991px) {
+                    padding-left: 1.5rem !important;
+                    padding-right: 1.5rem !important;
+                }
+
+                @media (max-width: 576px) {
+                    padding-left: 1rem !important;
+                    padding-right: 1rem !important;
+                }
+
+                > .gradebook-header {
+                    width: 100%;
+                    padding: 35px 0 20px;
+
+                    > h1 {
+                        color: var(--pgn-color-text-base);
+                        font-size: 24px;
+                        line-height: 30px;
+                        font-weight: 700;
+                        margin: 0 0 10px;
+                    }
+
+                    > .subtitle-row > h2 {
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 500;
+                        color: var(--pgn-color-text-primary);
+                    }
+                }
+
+                > h3.step-message-1,
+                > h3 {
+                    margin-top: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                > .d-flex.justify-content-between.flex-wrap {
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                > .d-flex.justify-content-between.align-items-center.mb-2 {
+                    gap: 1rem;
+                    margin-bottom: 1rem !important;
+                }
+
+                > .gradebook-container {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-top: 1rem;
+                    overflow-x: auto;
+                }
+
+                > .bulk-management-history-view {
+                    width: 100%;
+                }
             }
         }
 
-        > .gradebook-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        > .bulk-management-history-view {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
+        > aside.sidebar.open + .sidebar-contents.position-relative,
+        > aside.sidebar.open + .sidebar-contents.position-relative.opening {
+            width: calc(100% - 350px) !important;
+            max-width: calc(100% - 350px) !important;
+            margin-left: 350px !important;
         }
     }
 
@@ -178,26 +240,33 @@
                 }
             }
 
-            > div > div > .badge.badge-info > .btn-info {
-                color: var(--pgn-color-primary-base) !important;
-                background: transparent !important;
-                border: none !important;
+            > div > div > .badge.badge-info {
+                background-color: var(--pgn-color-primary-base) !important;
+                color: #ffffff !important;
 
-                &:hover,
-                &:focus {
-                    color: var(--pgn-color-primary-base) !important;
+                > .btn-info {
+                    color: #ffffff !important;
                     background: transparent !important;
-                }
-
-                &:focus:not(:focus-visible) {
-                    outline: none !important;
+                    border: none !important;
                     box-shadow: none !important;
-                }
 
-                &:focus-visible {
-                    outline: 2px solid var(--pgn-color-primary-base) !important;
-                    outline-offset: 2px;
-                    box-shadow: none !important;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: #ffffff !important;
+                        background: transparent !important;
+                    }
+
+                    &:focus:not(:focus-visible) {
+                        outline: none !important;
+                        box-shadow: none !important;
+                    }
+
+                    &:focus-visible {
+                        outline: 2px solid #ffffff !important;
+                        outline-offset: 2px;
+                        box-shadow: none !important;
+                    }
                 }
             }
 
@@ -402,6 +471,53 @@
                     outline-offset: 2px;
                     box-shadow: none !important;
                 }
+            }
+        }
+    }
+}
+
+#root main > .d-flex.sidebar-container.page-gradebook {
+    // Score View + sidebar Assignment Types / Student Groups use Paragon
+    // Form.Control as="select" (native <select class="form-control">).
+    select.form-control,
+    select.form-control.has-value,
+    .pgn__form-control-decorator-group > select.form-control {
+        accent-color: var(--pgn-color-primary-base);
+
+        &:focus {
+            border-color: var(--pgn-color-primary-base) !important;
+            box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+        }
+
+        // Chrome 135+: unlock option hover/checked styling (OS blue highlight otherwise).
+        @supports (appearance: base-select) {
+            &,
+            &::picker(select) {
+                appearance: base-select;
+            }
+
+            &::picker(select) {
+                background-color: #ffffff;
+                border: 1px solid var(--pgn-color-primary-base);
+                border-radius: 0.25rem;
+                padding: 0.25rem 0;
+            }
+        }
+
+        option {
+            background-color: #ffffff;
+            color: var(--pgn-color-text-base, #212529);
+
+            &:checked,
+            &:hover,
+            &:focus {
+                background-color: var(--pgn-color-primary-base) !important;
+                background: var(--pgn-color-primary-base) linear-gradient(
+                    0deg,
+                    var(--pgn-color-primary-base) 0%,
+                    var(--pgn-color-primary-base) 100%
+                ) !important;
+                color: #ffffff !important;
             }
         }
     }
