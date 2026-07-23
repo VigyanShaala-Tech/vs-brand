@@ -286,16 +286,31 @@
             }
 
             @supports (appearance: base-select) {
-                &,
-                &::picker(select) {
-                    appearance: base-select;
-                }
+                appearance: base-select;
+                display: inline-flex !important;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+                background-repeat: no-repeat !important;
+                background-position: right 0.75rem center !important;
+                background-size: 12px 8px !important;
+                padding-right: 2rem !important;
 
                 &::picker(select) {
+                    appearance: base-select;
                     background-color: #ffffff;
                     border: 1px solid var(--pgn-color-primary-base);
                     border-radius: 0.25rem;
                     padding: 0.25rem 0;
+                }
+
+                &::picker-icon {
+                    display: none !important;
+                    content: none !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    opacity: 0 !important;
                 }
             }
 

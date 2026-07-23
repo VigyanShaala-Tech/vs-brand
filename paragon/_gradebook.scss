@@ -241,8 +241,11 @@
             }
 
             > div > div > .badge.badge-info {
+                display: inline-flex !important;
+                align-items: center;
                 background-color: var(--pgn-color-primary-base) !important;
                 color: #ffffff !important;
+                margin: 0 0 0.5rem !important;
 
                 > .btn-info {
                     color: #ffffff !important;
@@ -267,6 +270,19 @@
                         outline-offset: 2px;
                         box-shadow: none !important;
                     }
+                }
+            }
+
+            // FilterBadges stack: space between badge rows (MFE uses bare <div> + <br>)
+            > div > div:has(> .badge.badge-info) {
+                margin-bottom: 0.5rem;
+
+                > br {
+                    display: none;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
                 }
             }
 
@@ -477,8 +493,53 @@
 }
 
 #root main > .d-flex.sidebar-container.page-gradebook {
-    // Score View + sidebar Assignment Types / Student Groups use Paragon
-    // Form.Control as="select" (native <select class="form-control">).
+    // Sidebar filter header: <h2><Icon className="fa fa-filter" /></h2>
+    // Icon has no Paragon src — FA glyph inherits huge h2 size / empty box.
+    > aside.sidebar .filter-sidebar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 15px;
+
+        > h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.25rem;
+            line-height: 1;
+            font-weight: 400;
+
+            > .fa.fa-filter,
+            > .pgn__icon.fa.fa-filter,
+            .fa-filter {
+                display: inline-block;
+                font-size: 1.25rem !important;
+                line-height: 1 !important;
+                width: 1.25rem;
+                height: 1.25rem;
+                color: var(--pgn-color-text-base, #212529);
+
+                svg {
+                    display: none !important;
+                }
+
+                &::before {
+                    font-family: FontAwesome, "FontAwesome", sans-serif;
+                    content: "\f0b0";
+                    display: block;
+                    font-size: 1.25rem;
+                    line-height: 1;
+                    color: inherit;
+                }
+            }
+        }
+
+        > .btn-icon,
+        > button.btn-icon {
+            flex-shrink: 0;
+        }
+    }
+
+    // Score View + sidebar selects: Form.Control as="select"
     select.form-control,
     select.form-control.has-value,
     .pgn__form-control-decorator-group > select.form-control {
@@ -489,18 +550,36 @@
             box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
         }
 
-        // Chrome 135+: unlock option hover/checked styling (OS blue highlight otherwise).
+        // Chrome 135+: style option hover without the broken default picker-icon layout.
         @supports (appearance: base-select) {
-            &,
-            &::picker(select) {
-                appearance: base-select;
-            }
+            appearance: base-select;
+            display: inline-flex !important;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 0.75rem center !important;
+            background-size: 12px 8px !important;
+            padding-right: 2rem !important;
 
             &::picker(select) {
+                appearance: base-select;
                 background-color: #ffffff;
                 border: 1px solid var(--pgn-color-primary-base);
                 border-radius: 0.25rem;
                 padding: 0.25rem 0;
+            }
+
+            // Hide OS/base-select triangle that was rendering under the field.
+            &::picker-icon {
+                display: none !important;
+                content: none !important;
+                width: 0 !important;
+                height: 0 !important;
+                opacity: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
         }
 
@@ -518,6 +597,83 @@
                     var(--pgn-color-primary-base) 100%
                 ) !important;
                 color: #ffffff !important;
+            }
+        }
+    }
+
+    // Learner search: Paragon SearchField border uses CSS vars (interaction/focus default to black).
+    > .sidebar-contents > .gradebook-content .search-container > .pgn__searchfield {
+        --pgn-color-search-field-border-base: var(--pgn-color-primary-base);
+        --pgn-color-search-field-border-interaction: var(--pgn-color-primary-base);
+        --pgn-color-search-field-border-focus: var(--pgn-color-primary-base);
+
+        border: 1px solid var(--pgn-color-primary-base) !important;
+        border-radius: 8px !important;
+        overflow: hidden;
+
+        .pgn__searchfield-form,
+        .pgn__searchfield_wrapper,
+        .form-control {
+            border-radius: 8px !important;
+        }
+
+        .pgn__searchfield_wrapper {
+            border-color: var(--pgn-color-primary-base) !important;
+
+            &:hover,
+            &:active {
+                border-color: var(--pgn-color-primary-base) !important;
+            }
+        }
+
+        &:hover,
+        &:active,
+        &:focus-within,
+        &.has-focus {
+            border-color: var(--pgn-color-primary-base) !important;
+        }
+
+        &.has-focus:not(.pgn__searchfield--external)::after,
+        .btn:focus-visible::after {
+            border-color: var(--pgn-color-primary-base) !important;
+        }
+
+        &.has-focus:not(.pgn__searchfield--external) .pgn__searchfield_wrapper {
+            box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+        }
+    }
+
+    > .sidebar-contents > .gradebook-content .search-container {
+        // If a suggestion/menu list is rendered in-page (not browser autofill).
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu .dropdown-item.active,
+        [role="listbox"] [role="option"]:hover,
+        [role="listbox"] [role="option"][aria-selected="true"] {
+            background-color: var(--pgn-color-primary-base) !important;
+            color: #ffffff !important;
+        }
+    }
+
+    // Grade table header: top + bottom rule lines → primary
+    > .sidebar-contents > .gradebook-content > .gradebook-container {
+        .pgn__data-table-wrapper,
+        .pgn__data-table-container,
+        table.pgn__data-table,
+        table {
+            > thead {
+                border-top: 1px solid var(--pgn-color-primary-base) !important;
+                border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+
+                > tr {
+                    border-top: 1px solid var(--pgn-color-primary-base) !important;
+                    border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+                }
+
+                > tr > th {
+                    border-top: 1px solid var(--pgn-color-primary-base) !important;
+                    border-bottom: 1px solid var(--pgn-color-primary-base) !important;
+                }
             }
         }
     }
