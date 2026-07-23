@@ -3828,17 +3828,27 @@ main#main > .header-action-bar.bg-white.position-sticky > .d-flex.flex-row.justi
 .page__account-settings .pgn-transition-replace-group .form-group {
   margin: 0;
 }
-.page__account-settings .pgn-transition-replace-group .form-group p.text-truncate, .page__account-settings .pgn-transition-replace-group .form-group p[data-hj-suppress=true] {
+.page__account-settings .pgn-transition-replace-group .form-group > p.text-truncate,
+.page__account-settings .pgn-transition-replace-group .form-group > p[data-hj-suppress=true] {
   font-weight: 600;
   font-size: 16px;
   color: var(--pgn-color-text-primary);
-  margin: 5px 0 0 !important;
+  margin: 5px 0 10px !important;
 }
-.page__account-settings .pgn-transition-replace-group .form-group p.text-truncate button, .page__account-settings .pgn-transition-replace-group .form-group p[data-hj-suppress=true] button {
+.page__account-settings .pgn-transition-replace-group .form-group > p.text-truncate button,
+.page__account-settings .pgn-transition-replace-group .form-group > p[data-hj-suppress=true] button {
   font-weight: 600;
   font-size: 16px;
   color: var(--pgn-color-primary-base);
   margin: 0 !important;
+}
+.page__account-settings .pgn-transition-replace-group .form-group > .alert.alert-warning,
+.page__account-settings .pgn-transition-replace-group .form-group > .alert-warning {
+  margin: 10px 0 0 !important;
+  box-shadow: none;
+}
+.page__account-settings .pgn-transition-replace-group .form-group > p.small.text-muted {
+  margin: 10px 0 0 !important;
 }
 .page__account-settings .pgn-transition-replace-group .form-group .d-flex.align-items-start h6 {
   padding: 6px 66px 6px 0;
@@ -3902,6 +3912,51 @@ main#main > .header-action-bar.bg-white.position-sticky > .d-flex.flex-row.justi
   background: #fff !important;
   border-color: #D1D5DB !important;
   color: #374151;
+}
+.page__account-settings .pgn-transition-replace-group select.form-control,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control {
+  accent-color: var(--pgn-color-primary-base);
+}
+.page__account-settings .pgn-transition-replace-group select.form-control:focus,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value:focus,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control:focus {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+@supports (appearance: base-select) {
+  .page__account-settings .pgn-transition-replace-group select.form-control, .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  .page__account-settings .pgn-transition-replace-group select.form-control.has-value,
+  .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
+  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control,
+  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
+  }
+  .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
+  .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    background-color: #ffffff;
+    border: 1px solid var(--pgn-color-primary-base);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0;
+  }
+}
+.page__account-settings .pgn-transition-replace-group select.form-control option,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value option,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option {
+  background-color: #ffffff;
+  color: var(--pgn-color-text-base, #212529);
+}
+.page__account-settings .pgn-transition-replace-group select.form-control option:checked, .page__account-settings .pgn-transition-replace-group select.form-control option:hover, .page__account-settings .pgn-transition-replace-group select.form-control option:focus,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value option:checked,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value option:hover,
+.page__account-settings .pgn-transition-replace-group select.form-control.has-value option:focus,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:checked,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:hover,
+.page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
+  color: #ffffff !important;
 }
 @media (min-width: 992px) {
   .profile-page {
@@ -7517,17 +7572,27 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group {
   margin: 0;
 }
-[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group p.text-truncate, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group p[data-hj-suppress=true] {
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > p.text-truncate,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > p[data-hj-suppress=true] {
   font-weight: 600;
   font-size: 16px;
   color: var(--pgn-color-text-primary);
-  margin: 5px 0 0 !important;
+  margin: 5px 0 10px !important;
 }
-[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group p.text-truncate button, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group p[data-hj-suppress=true] button {
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > p.text-truncate button,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > p[data-hj-suppress=true] button {
   font-weight: 600;
   font-size: 16px;
   color: var(--pgn-color-primary-base);
   margin: 0 !important;
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > .alert.alert-warning,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > .alert-warning {
+  margin: 10px 0 0 !important;
+  box-shadow: none;
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group > p.small.text-muted {
+  margin: 10px 0 0 !important;
 }
 [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .form-group .d-flex.align-items-start h6 {
   padding: 6px 66px 6px 0;
@@ -7595,6 +7660,51 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   color: #374151;
   background: none !important;
   color: var(--pgn-color-text-base);
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control {
+  accent-color: var(--pgn-color-primary-base);
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control:focus,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value:focus,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control:focus {
+  border-color: var(--pgn-color-primary-base) !important;
+  box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+}
+@supports (appearance: base-select) {
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value,
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control,
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    appearance: base-select;
+  }
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control::picker(select),
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value::picker(select),
+  [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control::picker(select) {
+    background-color: #ffffff;
+    border: 1px solid var(--pgn-color-primary-base);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0;
+  }
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control option,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value option,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option {
+  background-color: #ffffff;
+  color: var(--pgn-color-text-base, #212529);
+}
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control option:checked, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control option:hover, [data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control option:focus,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value option:checked,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value option:hover,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group select.form-control.has-value option:focus,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:checked,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:hover,
+[data-paragon-theme-variant=dark] .page__account-settings .pgn-transition-replace-group .pgn__form-control-decorator-group > select.form-control option:focus {
+  background-color: var(--pgn-color-primary-base) !important;
+  background: var(--pgn-color-primary-base) linear-gradient(0deg, var(--pgn-color-primary-base) 0%, var(--pgn-color-primary-base) 100%) !important;
+  color: #ffffff !important;
 }
 @media (min-width: 992px) {
   [data-paragon-theme-variant=dark] .profile-page {

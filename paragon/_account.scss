@@ -175,11 +175,16 @@
         }
         .form-group {
             margin: 0;
-            p.text-truncate, p[data-hj-suppress="true"] {
+
+            // Value line + help/alert sit stacked. Brand had zero bottom margin on the
+            // value <p>, while MFE alerts use Bootstrap mt-n2 — that caused overlap.
+            > p.text-truncate,
+            > p[data-hj-suppress="true"] {
                 font-weight: 600;
                 font-size: 16px;
                 color: var(--pgn-color-text-primary);
-                margin: 5px 0 0 !important;
+                margin: 5px 0 10px !important;
+
                 button {
                     font-weight: 600;
                     font-size: 16px;
@@ -187,6 +192,17 @@
                     margin: 0 !important;
                 }
             }
+
+            > .alert.alert-warning,
+            > .alert-warning {
+                margin: 10px 0 0 !important;
+                box-shadow: none;
+            }
+
+            > p.small.text-muted {
+                margin: 10px 0 0 !important;
+            }
+
             .d-flex.align-items-start {
                 h6 {
                     padding: 6px 66px 6px 0;
@@ -257,5 +273,48 @@
                 }
             }
         }
-    } 
+
+        // Year of Birth / Country / Site language: Form.Control as="select"
+        select.form-control,
+        select.form-control.has-value,
+        .pgn__form-control-decorator-group > select.form-control {
+            accent-color: var(--pgn-color-primary-base);
+
+            &:focus {
+                border-color: var(--pgn-color-primary-base) !important;
+                box-shadow: 0 0 0 1px var(--pgn-color-primary-base) !important;
+            }
+
+            @supports (appearance: base-select) {
+                &,
+                &::picker(select) {
+                    appearance: base-select;
+                }
+
+                &::picker(select) {
+                    background-color: #ffffff;
+                    border: 1px solid var(--pgn-color-primary-base);
+                    border-radius: 0.25rem;
+                    padding: 0.25rem 0;
+                }
+            }
+
+            option {
+                background-color: #ffffff;
+                color: var(--pgn-color-text-base, #212529);
+
+                &:checked,
+                &:hover,
+                &:focus {
+                    background-color: var(--pgn-color-primary-base) !important;
+                    background: var(--pgn-color-primary-base) linear-gradient(
+                        0deg,
+                        var(--pgn-color-primary-base) 0%,
+                        var(--pgn-color-primary-base) 100%
+                    ) !important;
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
 }
