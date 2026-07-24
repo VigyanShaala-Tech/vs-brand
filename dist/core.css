@@ -4419,7 +4419,32 @@ main#main {
   top: 0 !important;
   z-index: 5;
   box-sizing: border-box;
+  width: 350px;
   max-width: 350px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media (max-width: 991px) {
+  #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
 }
 #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative {
   box-sizing: border-box;
@@ -4817,12 +4842,6 @@ main#main {
   outline: 2px solid var(--pgn-color-primary-base) !important;
   outline-offset: 2px;
   box-shadow: none !important;
-}
-#root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 15px;
 }
 #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 {
   margin: 0;
@@ -8327,7 +8346,32 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   top: 0 !important;
   z-index: 5;
   box-sizing: border-box;
+  width: 350px;
   max-width: 350px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media (max-width: 991px) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
 }
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > .sidebar-contents.position-relative {
   box-sizing: border-box;
@@ -8725,12 +8769,6 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline: 2px solid var(--pgn-color-primary-base) !important;
   outline-offset: 2px;
   box-shadow: none !important;
-}
-[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 15px;
 }
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook > aside.sidebar .filter-sidebar-header > h2 {
   margin: 0;
