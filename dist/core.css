@@ -4403,6 +4403,29 @@ main#main {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+#root main > .d-flex.sidebar-container.page-gradebook .fa,
+#root main > .d-flex.sidebar-container.page-gradebook .fas,
+#root main > .d-flex.sidebar-container.page-gradebook .far,
+#root main > .d-flex.sidebar-container.page-gradebook .fal,
+#root main > .d-flex.sidebar-container.page-gradebook .fab,
+#root main > .d-flex.sidebar-container.page-gradebook [class^=fa-],
+#root main > .d-flex.sidebar-container.page-gradebook [class*=" fa-"] {
+  font-family: FontAwesome, "FontAwesome" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+}
+#root main > .d-flex.sidebar-container.page-gradebook .fa::before,
+#root main > .d-flex.sidebar-container.page-gradebook .fas::before,
+#root main > .d-flex.sidebar-container.page-gradebook .far::before,
+#root main > .d-flex.sidebar-container.page-gradebook .fal::before,
+#root main > .d-flex.sidebar-container.page-gradebook .fab::before,
+#root main > .d-flex.sidebar-container.page-gradebook [class^=fa-]::before,
+#root main > .d-flex.sidebar-container.page-gradebook [class*=" fa-"]::before {
+  font-family: FontAwesome, "FontAwesome" !important;
+}
 #root main > .d-flex.sidebar-container.page-gradebook {
   box-sizing: border-box;
   position: relative;
@@ -8329,6 +8352,29 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] .col.d-inline-flex.h-100.w-100.align-items-start.justify-content-start.g-3rem.px-120px.py-6 {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fa,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fas,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .far,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fal,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fab,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook [class^=fa-],
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook [class*=" fa-"] {
+  font-family: FontAwesome, "FontAwesome" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+}
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fa::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fas::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .far::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fal::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook .fab::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook [class^=fa-]::before,
+[data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook [class*=" fa-"]::before {
+  font-family: FontAwesome, "FontAwesome" !important;
 }
 [data-paragon-theme-variant=dark] #root main > .d-flex.sidebar-container.page-gradebook {
   box-sizing: border-box;
